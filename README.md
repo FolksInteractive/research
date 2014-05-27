@@ -72,7 +72,7 @@
    aisé de manipuler les templates de Meteor. Il est même possible d’intégrer directement un template de Meteor dans
    une surface. De plus, la communauté de Meteor semble emballée par le projet et plusieurs packages sont déjà
    disponibles. L’intégration devrait être relativement simple. Famo.us répondrait à la problématique énoncée
-   puisqu’il offre les fonctionnalités mentionnées et s’inscrit dans la même perspective d’avancement technologique.
+   puisqu’il offre les fonctionnalités mentionnées et s’inscrit dans la même perspective d’avancement technologique. Comme il s'agit d'une nouvelle technologie, la courbe d'apprentissage peut être plus importante que pour une librairie comme jQuery.
 ~~~
 *	Tests :
 
@@ -82,9 +82,22 @@
 
 ###jQuery
 *	Ressources :
+ * Site officiel: http://jquery.com/
+ * UI package: http://jqueryui.com/
+ * http://docs.meteor.com/
+ * https://github.com/TimHeckel/meteor-jquery-ui/
+ * Argument contre: http://frozeman.de/blog/2013/10/meteor-template-animation-helper/
 
+* Documentation : 
+
+~~~
+    jQuery offre des outils permettant de manipuler les éléments du DOM, le code CSS ainsi que d'intégrer des animations.
+~~~
 *	Hypothèses :
 
+~~~
+    La courbe d'apprentissage pour cette librairie est faible considérant qu'elle est déjà inclue à Meteor et qu'elle est l'une des plus utilisée en JavaScript. Plusieurs fonctions d'animations peuvent permettre de répondre à la problématique, il faut les utiliser de façon non-traditionnelle afin d'étendre les possibilités offertes. Celles ajoutées par jQueryUI peuvent être intéressantes. Toutefois, comme l'article en référence le mentionne, ces animations posent un problème de rafraichissement avec Meteor. La méthode de contournement décrite peut potentiellement règler le problème. Les problèmes de performances au niveau du navigateur peuvent toutefois subsiter.
+~~~
 *	Tests :
 
 *	Résultats :
@@ -93,14 +106,46 @@
 
 ###GreenSock
 *	Ressources :
+ * Site officiel: http://www.greensock.com/
+ * Package Meteor: https://github.com/RoyalMist/meteor-gsap
+ * Argument contre: http://www.google.ca/url?sa=t&rct=j&q=&esrc=s&source=web&cd=5&ved=0CFsQFjAE&url=http%3A%2F%2Fwww.designerstalk.com%2Fforums%2Fgeneral-discussion%2F72397-greensock-js-animation.html&ei=BumEU9PyDdahyASGxoHgDQ&usg=AFQjCNGi1-Lzt8jrdA95KsiSZuRLP1X2nQ&sig2=ldKNgZHzuFx277XI-C3cdQ
 
-*	Hypothèses :
+* Documentation : 
 
+~~~
+    GreenSock permet d'animer du contenu sous HTML5 en JavaScript.
+~~~
+* Hypothèses :
+    
+~~~
+    Cette librairie peut répondre à la problématique. Toutefois, il semble y avoir un problème de performance ce qui réduirait la perspective real-time. Il faut voir si la reactivity de Meteor persiste lors des animations.
+~~~
 *	Tests :
 
 *	Résultats :
 
 *	Recommandations :
+
+###PixiJS
+* Ressources :
+ * Site officiel: http://www.pixijs.com/
+ * Package Meteor: https://github.com/peerlibrary/meteor-pixi
+
+* Documentation : 
+
+~~~
+    Pixi.js utiliser webGl pour générer des animation 2D en JavaScript.
+~~~
+* Hypothèses :
+    
+~~~
+    L'intégration devrait être possible avec Meteor. Ce choix n'est peut-être pas approprié puisqu'il semble être orienté vers le jeu et non le web-app. Ses fonctionnalités et sa fluidité peuvent toutefois être intéressantes.
+~~~
+* Tests :
+
+* Résultats :
+
+* Recommandations :
 
 ##Glossaire
 
