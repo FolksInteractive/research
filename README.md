@@ -21,14 +21,15 @@
 
 ~~~
    CreateJS est une librairie JavaScript séparée en quatre modules : EaselJS, TweenJS, SoundJS, et PreloadJS. 
-
-   EaseJS utilise **WebGL** pour fournir des API semblable à Flash et permet de créer un environnement interactif à      l’aide des Canevas HTML5. 
+   
+   EaseJS utilise **WebGL** pour fournir des API semblable à Flash et permet de créer un environnement interactif à
+   l’aide des Canevas HTML5. 
    
    TweenJS fournit des outils permettant d’utiliser CSS pour faire de l’animation de type **Tweening**.
    
    SoundJS fournit des solutions aux problèmes relatifs aux fonctionnalités audio d’HTML5.
-   
-   PreloadJS permet de charger préalablement le contenu à animation qu’il s’agisse d’images, d’extraits audio ou         autre.
+   PreloadJS permet de charger préalablement le contenu à animation qu’il s’agisse d’images, d’extraits audio ou
+   autre.
 ~~~
 *	Hypothèses :
 
@@ -102,7 +103,7 @@
 * **Canvas** :
 
 ~~~
-   **Canvas** est une balise HTML5 permettant d’afficher, dessiner ou animer des formes dans une région donnée à
+   Canvas est une balise HTML5 permettant d’afficher, dessiner ou animer des formes dans une région donnée à
    l’aide de JavaScript.
 ~~~
 
@@ -119,5 +120,5 @@
 * **WebGL** :
 
 ~~~
-   Librairies permettant la programmation 3D sous navigateur web.
+   Librairie permettant la programmation 3D sous navigateur web.
 ~~~
