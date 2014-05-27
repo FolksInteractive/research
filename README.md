@@ -19,19 +19,19 @@
  * Package Meteor : https://github.com/charlesjshort/createjs-meteor
 * Documentation : 
 
-<p>CreateJS est une librairie JavaScript séparée en quatre modules : EaselJS, TweenJS, SoundJS, et PreloadJS. 
+   CreateJS est une librairie JavaScript séparée en quatre modules : EaselJS, TweenJS, SoundJS, et PreloadJS. 
 
-EaseJS utilise **WebGL** pour fournir des API semblable à Flash et permet de créer un environnement interactif à l’aide des Canevas HTML5. 
-
-TweenJS fournit des outils permettant d’utiliser CSS pour faire de l’animation de type **Tweening**.
-
-SoundJS fournit des solutions aux problèmes relatifs aux fonctionnalités audio d’HTML5.
-
-PreloadJS permet de charger préalablement le contenu à animation qu’il s’agisse d’images, d’extraits audio ou autre.</p>
+   EaseJS utilise **WebGL** pour fournir des API semblable à Flash et permet de créer un environnement interactif à      l’aide des Canevas HTML5. 
+   
+   TweenJS fournit des outils permettant d’utiliser CSS pour faire de l’animation de type **Tweening**.
+   
+   SoundJS fournit des solutions aux problèmes relatifs aux fonctionnalités audio d’HTML5.
+   
+   PreloadJS permet de charger préalablement le contenu à animation qu’il s’agisse d’images, d’extraits audio ou         autre.
 
 *	Hypothèses :
 
-<p>Les différents modules de CreateJS semblent être axés sur l’animation plus que la navigation. Ainsi, certaines fonctionnalités pourraient être utilisé à des fins utilitaires mais la librairie ne fournit pas les outils nécessaires au problème actuel. TweenJS semble permettre de manipuler des éléments du **DOM**, il pourrait être intéressant de l’explorer. Comme il existe un package pour Meteor, CreateJS pourrait être utilisé à travers les fichiers JavaScript du projet.</p>
+  Les différents modules de CreateJS semblent être axés sur l’animation plus que la navigation. Ainsi, certaines fonctionnalités pourraient être utilisé à des fins utilitaires mais la librairie ne fournit pas les outils nécessaires au problème actuel. TweenJS semble permettre de manipuler des éléments du **DOM**, il pourrait être intéressant de l’explorer. Comme il existe un package pour Meteor, CreateJS pourrait être utilisé à travers les fichiers JavaScript du projet.
 
 *	Tests :
 
@@ -88,13 +88,13 @@ PreloadJS permet de charger préalablement le contenu à animation qu’il s’a
 ##Glossaire
 
 * **Canvas** : 
-<p>**Canvas** est une balise HTML5 permettant d’afficher, dessiner ou animer des formes dans une région donnée à l’aide de JavaScript.</p>
+  **Canvas** est une balise HTML5 permettant d’afficher, dessiner ou animer des formes dans une région donnée à l’aide   de JavaScript.
 
 * **Tweening** :
-<p>Génération d’images successives telles que dans les films d’animations. Celles-ci sont intégrées entre des images existantes de façon à augmenter la fluidité des transitions.</p>
+  Génération d’images successives telles que dans les films d’animations. Celles-ci sont intégrées entre des images     existantes de façon à augmenter la fluidité des transitions. 
 
 * **DOM** : 
-<p>Document Object Model. Un standard permettant de mettre à jour le contenu de programmes sous langage de balisage. Ces mises à jour peuvent être actionnées suite à ses évènements générés par l’utilisateur.</p>
+  Document Object Model. Un standard permettant de mettre à jour le contenu de programmes sous langage de balisage.     Ces mises à jour peuvent être actionnées suite à ses évènements générés par l’utilisateur.
 
 * **WebGL** :
-<p>Librairies permettant la programmation 3D sous navigateur web.</p> 
+  Librairies permettant la programmation 3D sous navigateur web.
