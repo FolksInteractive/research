@@ -19,7 +19,6 @@
  * Package Meteor : https://github.com/charlesjshort/createjs-meteor
 * Documentation :
 
-~~~
    CreateJS est une librairie JavaScript séparée en quatre modules : EaselJS, TweenJS, SoundJS, et PreloadJS. 
    
    EaseJS utilise WebGL pour fournir des API semblable à Flash et permet de créer un environnement interactif à
@@ -30,16 +29,15 @@
    SoundJS fournit des solutions aux problèmes relatifs aux fonctionnalités audio d’HTML5.
    PreloadJS permet de charger préalablement le contenu à animation qu’il s’agisse d’images, d’extraits audio ou
    autre.
-~~~
+
 *	Hypothèses :
 
-~~~
    Les différents modules de CreateJS semblent être axés sur l’animation plus que la navigation. 
    Ainsi, certaines fonctionnalités pourraient être utilisé à des fins utilitaires mais la librairie ne fournit pas
    les outils nécessaires au problème actuel. TweenJS semble permettre de manipuler des éléments du DOM, il 
    pourrait être intéressant de l’explorer. Comme il existe un package pour Meteor, CreateJS pourrait être utilisé à 
    travers les fichiers JavaScript du projet.
-~~~
+
 *	Tests :
 
 *	Résultats :
@@ -58,22 +56,21 @@
  
 *	Documentation : 
 
-~~~
    Comme les applications web sous HTML5 et JavaScript sont assez lentes, des librairies telles que Meteor ou Famo.us
    émergent afin de permettre aux développeurs de créer des applications temps réel. Famou.us remplace le moteur
    d’affichage des navigateurs par le sien et anime le contenu grâces aux fonctionnalités de CSS3. Famo.us fournit
    quatre moteurs : un pour le rendering, un autre pour les concepts physiques, un capteur d’évènements et  un dernier
    qui transforme ou envoie du contenu au DOM, à WebGL et même Canvas.
-~~~
+
 *	Hypothèses :
 
-~~~
+
    Famou.us manipule les éléments du DOM nommés surfaces. Ceux-ci sont en fait des balises div, il serait donc
    aisé de manipuler les templates de Meteor. Il est même possible d’intégrer directement un template de Meteor dans
    une surface. De plus, la communauté de Meteor semble emballée par le projet et plusieurs packages sont déjà
    disponibles. L’intégration devrait être relativement simple. Famo.us répondrait à la problématique énoncée
    puisqu’il offre les fonctionnalités mentionnées et s’inscrit dans la même perspective d’avancement technologique. Comme il s'agit d'une nouvelle technologie, la courbe d'apprentissage peut être plus importante que pour une librairie comme jQuery.
-~~~
+
 *	Tests :
 
 *	Résultats :
@@ -90,14 +87,12 @@
 
 * Documentation : 
 
-~~~
     jQuery offre des outils permettant de manipuler les éléments du DOM, le code CSS ainsi que d'intégrer des animations.
-~~~
+
 *	Hypothèses :
 
-~~~
     La courbe d'apprentissage pour cette librairie est faible considérant qu'elle est déjà inclue à Meteor et qu'elle est l'une des plus utilisée en JavaScript. Plusieurs fonctions d'animations peuvent permettre de répondre à la problématique, il faut les utiliser de façon non-traditionnelle afin d'étendre les possibilités offertes. Celles ajoutées par jQueryUI peuvent être intéressantes. Toutefois, comme l'article en référence le mentionne, ces animations posent un problème de rafraichissement avec Meteor. La méthode de contournement décrite peut potentiellement règler le problème. Les problèmes de performances au niveau du navigateur peuvent toutefois subsiter.
-~~~
+
 *	Tests :
 
 *	Résultats :
@@ -112,14 +107,12 @@
 
 * Documentation : 
 
-~~~
     GreenSock permet d'animer du contenu sous HTML5 en JavaScript.
-~~~
+
 * Hypothèses :
     
-~~~
     Cette librairie peut répondre à la problématique. Toutefois, il semble y avoir un problème de performance ce qui réduirait la perspective real-time. Il faut voir si la reactivity de Meteor persiste lors des animations.
-~~~
+
 *	Tests :
 
 *	Résultats :
@@ -133,14 +126,12 @@
 
 * Documentation : 
 
-~~~
     Pixi.js utiliser webGl pour générer des animation 2D en JavaScript.
-~~~
+
 * Hypothèses :
     
-~~~
     L'intégration devrait être possible avec Meteor. Ce choix n'est peut-être pas approprié puisqu'il semble être orienté vers le jeu et non le web-app. Ses fonctionnalités et sa fluidité peuvent toutefois être intéressantes.
-~~~
+
 * Tests :
 
 * Résultats :
@@ -151,23 +142,17 @@
 
 * **Canvas** :
 
-~~~
    Canvas est une balise HTML5 permettant d’afficher, dessiner ou animer des formes dans une région donnée à
    l’aide de JavaScript.
-~~~
 
 * **Tweening** :
 
-~~~
    Génération d’images successives telles que dans les films d’animations. Celles-ci sont intégrées entre des images     existantes de façon à augmenter la fluidité des transitions. 
-~~~
+
 * **DOM** :
 
-~~~
    Document Object Model. Un standard permettant de mettre à jour le contenu de programmes sous langage de balisage.     Ces mises à jour peuvent être actionnées suite à ses évènements générés par l’utilisateur.
-~~~
+
 * **WebGL** :
 
-~~~
    Librairie permettant la programmation 3D sous navigateur web.
-~~~
