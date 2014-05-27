@@ -22,10 +22,10 @@
 ~~~
    CreateJS est une librairie JavaScript séparée en quatre modules : EaselJS, TweenJS, SoundJS, et PreloadJS. 
    
-   EaseJS utilise __WebGL__ pour fournir des API semblable à Flash et permet de créer un environnement interactif à
+   EaseJS utilise WebGL pour fournir des API semblable à Flash et permet de créer un environnement interactif à
    l’aide des Canevas HTML5. 
    
-   TweenJS fournit des outils permettant d’utiliser CSS pour faire de l’animation de type __Tweening__.
+   TweenJS fournit des outils permettant d’utiliser CSS pour faire de l’animation de type Tweening.
    
    SoundJS fournit des solutions aux problèmes relatifs aux fonctionnalités audio d’HTML5.
    PreloadJS permet de charger préalablement le contenu à animation qu’il s’agisse d’images, d’extraits audio ou
@@ -36,7 +36,7 @@
 ~~~
    Les différents modules de CreateJS semblent être axés sur l’animation plus que la navigation. 
    Ainsi, certaines fonctionnalités pourraient être utilisé à des fins utilitaires mais la librairie ne fournit pas
-   les outils nécessaires au problème actuel. TweenJS semble permettre de manipuler des éléments du **DOM**, il 
+   les outils nécessaires au problème actuel. TweenJS semble permettre de manipuler des éléments du DOM, il 
    pourrait être intéressant de l’explorer. Comme il existe un package pour Meteor, CreateJS pourrait être utilisé à 
    travers les fichiers JavaScript du projet.
 ~~~
@@ -63,12 +63,12 @@
    émergent afin de permettre aux développeurs de créer des applications temps réel. Famou.us remplace le moteur
    d’affichage des navigateurs par le sien et anime le contenu grâces aux fonctionnalités de CSS3. Famo.us fournit
    quatre moteurs : un pour le rendering, un autre pour les concepts physiques, un capteur d’évènements et  un dernier
-   qui transforme ou envoie du contenu au **DOM**, à **WebGL** et même **Canvas**.
+   qui transforme ou envoie du contenu au DOM, à WebGL et même Canvas.
 ~~~
 *	Hypothèses :
 
 ~~~
-   Famou.us manipule les éléments du **DOM** nommés surfaces. Ceux-ci sont en fait des balises div, il serait donc
+   Famou.us manipule les éléments du DOM nommés surfaces. Ceux-ci sont en fait des balises div, il serait donc
    aisé de manipuler les templates de Meteor. Il est même possible d’intégrer directement un template de Meteor dans
    une surface. De plus, la communauté de Meteor semble emballée par le projet et plusieurs packages sont déjà
    disponibles. L’intégration devrait être relativement simple. Famo.us répondrait à la problématique énoncée
