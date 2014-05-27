@@ -18,7 +18,7 @@
  * Site officiel : http://www.createjs.com/
  * Package Meteor : https://github.com/charlesjshort/createjs-meteor
 * Documentation : 
-
+~~~
 CreateJS est une librairie JavaScript séparée en quatre modules : EaselJS, TweenJS, SoundJS, et PreloadJS. 
 
 EaseJS utilise **WebGL** pour fournir des API semblable à Flash et permet de créer un environnement interactif à l’aide des Canevas HTML5. 
