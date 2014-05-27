@@ -22,10 +22,10 @@
 ~~~
    CreateJS est une librairie JavaScript séparée en quatre modules : EaselJS, TweenJS, SoundJS, et PreloadJS. 
    
-   EaseJS utilise **WebGL** pour fournir des API semblable à Flash et permet de créer un environnement interactif à
+   EaseJS utilise __WebGL__ pour fournir des API semblable à Flash et permet de créer un environnement interactif à
    l’aide des Canevas HTML5. 
    
-   TweenJS fournit des outils permettant d’utiliser CSS pour faire de l’animation de type **Tweening**.
+   TweenJS fournit des outils permettant d’utiliser CSS pour faire de l’animation de type __Tweening__.
    
    SoundJS fournit des solutions aux problèmes relatifs aux fonctionnalités audio d’HTML5.
    PreloadJS permet de charger préalablement le contenu à animation qu’il s’agisse d’images, d’extraits audio ou
@@ -34,7 +34,11 @@
 *	Hypothèses :
 
 ~~~
-   Les différents modules de CreateJS semblent être axés sur l’animation plus que la navigation. Ainsi, certaines        fonctionnalités pourraient être utilisé à des fins utilitaires mais la librairie ne fournit pas les outils            nécessaires au problème actuel. TweenJS semble permettre de manipuler des éléments du **DOM**, il pourrait être       intéressant de l’explorer. Comme il existe un package pour Meteor, CreateJS pourrait être utilisé à travers les       fichiers JavaScript du projet.
+   Les différents modules de CreateJS semblent être axés sur l’animation plus que la navigation. 
+   Ainsi, certaines fonctionnalités pourraient être utilisé à des fins utilitaires mais la librairie ne fournit pas
+   les outils nécessaires au problème actuel. TweenJS semble permettre de manipuler des éléments du **DOM**, il 
+   pourrait être intéressant de l’explorer. Comme il existe un package pour Meteor, CreateJS pourrait être utilisé à 
+   travers les fichiers JavaScript du projet.
 ~~~
 *	Tests :
 
