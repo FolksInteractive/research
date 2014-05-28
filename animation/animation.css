@@ -1,7 +1,5 @@
 /* CSS declarations go here */
-div {
+div.row {
   border: 1px solid;
-  height: 50px;
-  width: 50px;
   margin-bottom: 25px;
 }
