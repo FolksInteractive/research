@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>DOMElement Tutorial</title>
+
+  <script src="http://code.createjs.com/easeljs-0.4.2.min.js"></script>
+  <script src="http://code.createjs.com/tweenjs-0.2.0.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+
+  <script>
+    var canvas, stage, exportRoot;
+    window.onload = init;
+
+    function init() {
+      canvas = document.getElementById("canvas");
+      //DOMElement creation
+      form = document.getElementById("myform");
+      formDOMElement = new DOMElement(form);
+
+      title = document.getElementById("title");
+      titleDOMElement = new DOMElement(title);
+
+      stage = new Stage(canvas);
+      //move it's rotation center at the center of the form
+      formDOMElement.regX = form.offsetWidth*-0.5;
+      // formDOMElement.regY = form.offsetHeight*0;
+      //move the form above the screen
+      formDOMElement.x = canvas.width * 0.5;
+      formDOMElement.y =  - 200;
+
+      //add the formDOMElement to the display list
+      stage.addChild(formDOMElement);
+      stage.addChild(titleDOMElement);
+
+      Ticker.setFPS(60);
+      Ticker.addListener(stage);
+      Tween.get(formDOMElement).to({alpha:1, y:canvas.height * 0.5, rotation:360},2000,Ease.cubicOut);
+      Tween.get(titleDOMElement).to({alpha:1, y:canvas.height * 0.5, rotation:0},2000,Ease.cubicOut);
+
+      jQuery(function($) {
+        $('#title').click(function() {
+          Tween.get(formDOMElement).to({x:formDOMElement.x+200});
+        });
+      });
+
+      //Ne fonctionne pas
+      // EventDispatcher.initialize(titleDOMElement.prototype);
+      // titleDOMElement.addEventListener("click", function(event) {
+      //      console.log("CK"); // false, scope is ambiguous.
+      //  });
+
+      //  titleDOMElement.on("click", function(event) {
+      //      console.log("CLI"); // true, "on" uses dispatcher scope by default.
+      //  });
+
+    }
+  </script>
+</head>
+
+<body>
+    <div id="main">
+        <H1 id="title">DOMElements example</H1>
+        <form id="myform">
+            <label for="firstName">Enter your firstName:</label>
+            <input type="text" id="fistName"/><br>
+            <label for="lastName">Enter your lastName:</label>
+            <input type="text"  id="lastName"/><br>
+            <br>
+            <input type="checkbox" id="case" />
+            <label for="case">Alpha 50%</label><br>
+            <p id="submit" >
+                <input type="submit" value="Submit"/>
+            </p>
+        </form>
+        <canvas id="canvas" width="100%" height="100%" style="">
+            <p>Your browser is sooooo old ! Download a modern one now !</p>
+        </canvas>
+    </div>
+</body>
+</html>

@@ -17,6 +17,7 @@
 * Ressources :
  * Site officiel : http://www.createjs.com/
  * Package Meteor : https://github.com/charlesjshort/createjs-meteor
+ * Tutoriel : http://small-codes.com/?p=563&preview=true&lang=en 
 * Documentation :
 
    CreateJS est une librairie JavaScript séparée en quatre modules : EaselJS, TweenJS, SoundJS, et PreloadJS. 
@@ -40,9 +41,15 @@
 
 *	Tests :
 
+    Un tutoriel concenant la manipulation d'objets du DOM avec TweenJs a été suivi. Celui-ci peremettait d'animer un element form du code html et de l'animer vers à travers le Canvas.
+
 *	Résultats :
 
+    En suivant le tutoriel en mode statique, il a été possible d'animer des éléments de l'interface. Il n'a toutefois pas été possible de faire fonctionner la librairie dans Meteor pour l'instant. Utiliser cette technologie implique de positionner chaque élément du DOM dans le Canvas de façon précise et d'en tenir compte lors des animations. Les positions des éléments ne dépendent pas du format du navigateur mais bien de la position qui leur est assignée. Les écouteurs d'événements représentent quelques lignes de plus. Il a toutefois été possible de combiner le tout avec jQuery pour animer en fonction d'événements.
+
 *	Recommandations :
+
+    Bien que cette librairie puisse offrir des possibilité d'animation intéressante son intégration pose un changement important quant à la façon de positionner les éléments d'une application web.
 
 ###Famo.us
 *	Ressources :
