@@ -156,3 +156,7 @@
 * **WebGL** :
 
    Librairie permettant la programmation 3D sous navigateur web.
+   
+## À explorer
+
+* https://atmospherejs.com/package/iron-transitioner
