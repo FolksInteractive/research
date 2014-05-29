@@ -1,5 +1,37 @@
 /* CSS declarations go here */
-/*div.row {
-  border: 1px solid;
-  margin-bottom: 25px;
+body {
+  font-family: helvetica-light;
+}
+
+.header {
+  left: 50%;
+  padding-top: 50px;
+  text-align: center;
+}
+/*.header .glyphicon {
+  font-size: 50px;
 }*/
+
+.caption {
+  color: grey;
+}
+
+.tile{
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+.tile h2 {
+  font-size: 20px;
+}
+
+.tile h3 {
+  text-align: left;
+  color: grey;
+}
+
+.tile .glyphicon {
+  font-size: 75px;
+  color: grey;
+  padding-top: 95px;
+}

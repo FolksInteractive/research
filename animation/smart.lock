@@ -3,7 +3,8 @@
   "dependencies": {
     "basePackages": {
       "bootstrap-3": {},
-      "famono": {}
+      "famono": {},
+      "jade": {}
     },
     "packages": {
       "bootstrap-3": {
@@ -15,6 +16,11 @@
         "git": "https://github.com/raix/Meteor-famono.git",
         "tag": "v0.2.2",
         "commit": "33439a1a1ba001772a2d2b26db1825875ba64f90"
+      },
+      "jade": {
+        "git": "https://github.com/mquandalle/meteor-jade.git",
+        "tag": "v0.2.4",
+        "commit": "a47a4c59daaa57e7fe5f1544d4ea76d95a5c9abf"
       }
     }
   }

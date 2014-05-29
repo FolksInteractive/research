@@ -1,6 +1,7 @@
 {
   "packages": {
     "bootstrap-3": {},
-    "famono": {}
+    "famono": {},
+    "jade": {}
   }
 }
