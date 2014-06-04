@@ -1,6 +1,7 @@
 /* CSS declarations go here */
 body {
   font-family: helvetica-light;
+  background-color: black;
 }
 
 .header {
