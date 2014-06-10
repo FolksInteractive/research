@@ -19,9 +19,9 @@
        under the License.
 */
 
-var shell = require('shelljs'),
-    child_process = require('child_process'),
-    Q     = require('q');
+var shell = Npm.require('shelljs'),
+    child_process = Npm.require('child_process'),
+    Q     = Npm.require('q');
 
 get_highest_sdk = function(results){
     var reg = /\d+/;
@@ -62,4 +62,3 @@ get_sdks = function() {
 module.exports.run = function() {
     return Q.all([get_sdks()]);
 }
-
