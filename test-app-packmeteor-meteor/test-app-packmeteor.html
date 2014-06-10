@@ -1,0 +1,28 @@
+<head>
+  <title>test-app-packmeteor</title>
+</head>
+
+<body>
+  <div class="mobile">
+    {{> hello}}
+  </div>
+</body>
+
+<template name="hello">
+
+ <h1 class="hidden-xs">Hello World!</h1>
+    <button type="button" class="btn btn-default">Add one</button>
+
+   {{#each clicks}}
+   {{> item}}
+   {{/each}}
+
+
+</template>
+
+<template name="item">
+    <div class="row item">
+      <h1 class="list-group-item-heading">{{content}}</h1>
+      <div class="list-group-item-body date">{{createdAt}}</div>
+    </div>
+</template>
