@@ -1,34 +1,33 @@
-#Projet animation – Recherche et développement
+#Projet mobile – Recherche et développement
 
 ##Problématique
 
-*	Amélioration de la navigation entre les différentes sections
-*	Changer l’aspect du logiciel traditionnel (Web-app) pour une sous-forme de système d’exploitation
+* Utiliser meteor dans un context mobile à l'aire de Phonegap/Cordova.
 
 ##Contraintes et considérations
 
-*	Compatibilité avec Spacebar (Meteor)
-*	Utilisation des technologies HTML5, CSS3 et JavaScript
-*	Navigation par url afin d’accéder à une partie de l’application est-elle possible
-*	Utiliser des filtres/couches dans l’interface pour faire apparaître du contenu et l’animer dans la page
+* L'application doit être native.
+* Elle doit être codée en JavaScript/HTML/CSS.
+* L'application doit être codée sous Meteor et envoyé aux packages/frameworks pour générer l'exécutable. Une application Meteor opérant sur un ordinateur doit manipuler le même contenu (MongoDB) mais avoir une interface plus détaillée.
+* Phonegap/Cordova implique l'utilisation de Node.js (Npm) ainsi que des SDK des différentes plateformes mobiles.
 
-##Librairies d’animation 
-###CreateJS
-* Ressources :
- * Site officiel : http://www.createjs.com/
- * Package Meteor : https://github.com/charlesjshort/createjs-meteor
+##Packages Meteorite pour utiliser Phonegap/Cordova
+
+* Ressources : 
+ * Phonegap : http://phonegap.com/
+ * Cordova : http://cordova.apache.org/
+ * https://www.discovermeteor.com/blog/blonk-building-tinder-for-jobs-with-meteor-for-mobile/
+ * http://zeroasterisk.com/2013/08/22/meteor-phonegapcordova-roundup-fall-2013/
+ * MeteorRider : https://github.com/SpaceCapsule/MeteorRider
+ * Packmeteor : https://github.com/SpaceCapsule/packmeteor
+ * Cordova-phonegap : https://github.com/awatson1978/cordova-phonegap
+ * Google group des développeurs des packages : https://groups.google.com/forum/#!topic/meteor-talk/vv6Rq8iGM0M
+ * Dev talk de Percolate Studio : https://www.youtube.com/watch?v=eeY1mZhvDy4
+ 
+###MeteorRider 
 * Documentation :
 
-   CreateJS est une librairie JavaScript séparée en quatre modules : EaselJS, TweenJS, SoundJS, et PreloadJS. 
-   
-   EaseJS utilise WebGL pour fournir des API semblable à Flash et permet de créer un environnement interactif à
-   l’aide des Canevas HTML5. 
-   
-   TweenJS fournit des outils permettant d’utiliser CSS pour faire de l’animation de type Tweening.
-   
-   SoundJS fournit des solutions aux problèmes relatifs aux fonctionnalités audio d’HTML5.
-   PreloadJS permet de charger préalablement le contenu à animation qu’il s’agisse d’images, d’extraits audio ou
-   autre.
+   Permet de lier une application meteor déployé localement ou non à une application Phonegap via un URL. Ce package envoie le contenu de l'application web à l'application mobile.
 
 *	Hypothèses :
 
@@ -39,124 +38,40 @@
    travers les fichiers JavaScript du projet.
 
 *	Tests :
+ * Liaison de l'application du Centch (c120.meteor.com)
 
 *	Résultats :
+ * L'application a été liée avec succès et simplicité. Comme le design de l'application n'est pas totalement responsive l'interface usager n'est pas utilisable facilement. Le côté réactif de Meteor est préservé, en ajoutant des éléments à MongoDB, ils apparaissent simultanément à l'ordinateur et sur l'application mobile.
 
 *	Recommandations :
+ * Utiliser cette méthode avec un design resposive (HTML5, CSS3 et Bootstrap).
+ * Explorer l'utilisation de données hors-ligne et du package appcach pour utiliser l'application sans connexion internet.
 
-###Famo.us
-*	Ressources :
- * Site officiel : https://famo.us/
- * Package Meteor : https://atmospherejs.com/package/famous-components
- * http://differential.io/blog/report-from-the-famous-private-beta
- * http://www.infoworld.com/t/web-applications/fast-and-flashy-famous-javascript-framework-revealed-232046
- * http://blog.percolatestudio.com/engineering/the-future-of-javascript-animation-with-famous/
- * http://famous-tutorial.meteor.com/
- * https://www.youtube.com/watch?v=bmd-cXSGQAAç
- 
-*	Documentation : 
-
-   Comme les applications web sous HTML5 et JavaScript sont assez lentes, des librairies telles que Meteor ou Famo.us
-   émergent afin de permettre aux développeurs de créer des applications temps réel. Famou.us remplace le moteur
-   d’affichage des navigateurs par le sien et anime le contenu grâces aux fonctionnalités de CSS3. Famo.us fournit
-   quatre moteurs : un pour le rendering, un autre pour les concepts physiques, un capteur d’évènements et  un dernier
-   qui transforme ou envoie du contenu au DOM, à WebGL et même Canvas.
-
-*	Hypothèses :
-
-
-   Famou.us manipule les éléments du DOM nommés surfaces. Ceux-ci sont en fait des balises div, il serait donc
-   aisé de manipuler les templates de Meteor. Il est même possible d’intégrer directement un template de Meteor dans
-   une surface. De plus, la communauté de Meteor semble emballée par le projet et plusieurs packages sont déjà
-   disponibles. L’intégration devrait être relativement simple. Famo.us répondrait à la problématique énoncée
-   puisqu’il offre les fonctionnalités mentionnées et s’inscrit dans la même perspective d’avancement technologique. Comme il s'agit d'une nouvelle technologie, la courbe d'apprentissage peut être plus importante que pour une librairie comme jQuery.
-
-*	Tests :
-
-*	Résultats :
-
-*	Recommandations :
-
-###jQuery
-*	Ressources :
- * Site officiel: http://jquery.com/
- * UI package: http://jqueryui.com/
- * http://docs.meteor.com/
- * https://github.com/TimHeckel/meteor-jquery-ui/
- * Argument contre: http://frozeman.de/blog/2013/10/meteor-template-animation-helper/
-
+###Packmeteor
 * Documentation : 
 
-    jQuery offre des outils permettant de manipuler les éléments du DOM, le code CSS ainsi que d'intégrer des animations.
+   Package l'application Meteor active sous http://localhost:3000 via le CLI de Cordova (create, build, etc.
+   
+* Hypothèses : 
 
-*	Hypothèses :
-
-    La courbe d'apprentissage pour cette librairie est faible considérant qu'elle est déjà inclue à Meteor et qu'elle est l'une des plus utilisée en JavaScript. Plusieurs fonctions d'animations peuvent permettre de répondre à la problématique, il faut les utiliser de façon non-traditionnelle afin d'étendre les possibilités offertes. Celles ajoutées par jQueryUI peuvent être intéressantes. Toutefois, comme l'article en référence le mentionne, ces animations posent un problème de rafraichissement avec Meteor. La méthode de contournement décrite peut potentiellement règler le problème. Les problèmes de performances au niveau du navigateur peuvent toutefois subsiter.
-
-*	Tests :
-
-*	Résultats :
-
-*	Recommandations :
-
-###GreenSock
-*	Ressources :
- * Site officiel: http://www.greensock.com/
- * Package Meteor: https://github.com/RoyalMist/meteor-gsap
- * Argument contre: http://www.google.ca/url?sa=t&rct=j&q=&esrc=s&source=web&cd=5&ved=0CFsQFjAE&url=http%3A%2F%2Fwww.designerstalk.com%2Fforums%2Fgeneral-discussion%2F72397-greensock-js-animation.html&ei=BumEU9PyDdahyASGxoHgDQ&usg=AFQjCNGi1-Lzt8jrdA95KsiSZuRLP1X2nQ&sig2=ldKNgZHzuFx277XI-C3cdQ
-
-* Documentation : 
-
-    GreenSock permet d'animer du contenu sous HTML5 en JavaScript.
-
-* Hypothèses :
-    
-    Cette librairie peut répondre à la problématique. Toutefois, il semble y avoir un problème de performance ce qui réduirait la perspective real-time. Il faut voir si la reactivity de Meteor persiste lors des animations.
-
-*	Tests :
-
-*	Résultats :
-
-*	Recommandations :
-
-###PixiJS
-* Ressources :
- * Site officiel: http://www.pixijs.com/
- * Package Meteor: https://github.com/peerlibrary/meteor-pixi
-
-* Documentation : 
-
-    Pixi.js utiliser webGl pour générer des animation 2D en JavaScript.
-
-* Hypothèses :
-    
-    L'intégration devrait être possible avec Meteor. Ce choix n'est peut-être pas approprié puisqu'il semble être orienté vers le jeu et non le web-app. Ses fonctionnalités et sa fluidité peuvent toutefois être intéressantes.
+   Comme le processus est bien détaillé ce package devrait être utilisable facilement via cordova. Il devrait aussi permettre de faire une applicaiton mobile indépendante d'une application web, il faudra ainsi trouver un moyen pour les connecter à la même base de données.
 
 * Tests :
+ * Suivre la procédure de base décrite par la documentation du package. 
 
 * Résultats :
+ * La mise en place du projet s'avère plus difficile que prévue. En suivant les instructions des problèmes sont tout de même obtenus quant à la structure du projet et la syntaxe. Il n'est pas possible d'exécuter l'application à cause de require et de modules liés à Npm. 
 
 * Recommandations :
 
+###Cordova-phonegap
+* Documentation : 
+* Hypothèses :
+* Tests :
+* Résultats
+* Recommandations :
 ##Glossaire
 
-* **Canvas** :
+* **Native** :
 
-   Canvas est une balise HTML5 permettant d’afficher, dessiner ou animer des formes dans une région donnée à
-   l’aide de JavaScript.
-
-* **Tweening** :
-
-   Génération d’images successives telles que dans les films d’animations. Celles-ci sont intégrées entre des images     existantes de façon à augmenter la fluidité des transitions. 
-
-* **DOM** :
-
-   Document Object Model. Un standard permettant de mettre à jour le contenu de programmes sous langage de balisage.     Ces mises à jour peuvent être actionnées suite à ses évènements générés par l’utilisateur.
-
-* **WebGL** :
-
-   Librairie permettant la programmation 3D sous navigateur web.
-   
-## À explorer
-
-* https://atmospherejs.com/package/iron-transitioner
+   Une application dite native est développée dans un context mobile pour une plateform spécifique. Une application web se distingue par le fait de s'exécuter dans un navigateur tel que Chrome ou Firefox.
