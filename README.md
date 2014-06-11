@@ -160,3 +160,4 @@
 ## À explorer
 
 * https://atmospherejs.com/package/iron-transitioner
+* http://bouncejs.com/
