@@ -2,7 +2,7 @@
 
 ##Problématique
 
-* Utiliser meteor dans un context mobile à l'aire de Phonegap/Cordova.
+* Utiliser Meteor dans un context mobile avec Cordova/Phonegap.
 
 ##Contraintes et considérations
 
@@ -12,9 +12,9 @@
 * Phonegap/Cordova implique l'utilisation de Node.js (Npm) ainsi que des SDK des différentes plateformes mobiles.
 * Il semblerait qu'à moyen terme une solution combinant famo.us et phonegap soit mise en place par la communauté. Il n'y a pas encore de solution stable/optimale pour les application mobiles avec Meteor. Percolate Studio et le rassemblement SpaceCapsule mettent ou vont mettre en place des packages visant à accomplir le tout.
 
-##Packages Meteorite pour utiliser Phonegap/Cordova
+##Phase 1 - Ressources permettant d'utiliser Meteor avec Cordova/Phonegap
 
-* Ressources : 
+* Sources : 
  * Phonegap : http://phonegap.com/
  * Cordova : http://cordova.apache.org/
  * https://www.discovermeteor.com/blog/blonk-building-tinder-for-jobs-with-meteor-for-mobile/
@@ -33,22 +33,19 @@
 
 * Hypothèses :
 
-   Les différents modules de CreateJS semblent être axés sur l’animation plus que la navigation. 
-   Ainsi, certaines fonctionnalités pourraient être utilisé à des fins utilitaires mais la librairie ne fournit pas
-   les outils nécessaires au problème actuel. TweenJS semble permettre de manipuler des éléments du DOM, il 
-   pourrait être intéressant de l’explorer. Comme il existe un package pour Meteor, CreateJS pourrait être utilisé à 
-   travers les fichiers JavaScript du projet.
+   Cette méthode semble simple. Une limitation pouvant être rencontrée semble être au niveau des mises à jour de l'application mobile. Il faut vérifier s'il faut générer un exécutable pour chaque version de l'application Meteor.
 
 * Tests :
- * Liaison de l'application du Centch (c120.meteor.com)
+ * Liaison à l'application du Centch (c120.meteor.com)
+ * Liaison à l'application créé pour packmeteor (tc-pack.meteor.com) sous le boiler-plate spécifié en source.
 
 * Résultats :
- * L'application a été liée avec succès et simplicité. Comme le design de l'application n'est pas totalement responsive l'interface usager n'est pas utilisable facilement. Le côté réactif de Meteor est préservé, en ajoutant des éléments à MongoDB, ils apparaissent simultanément à l'ordinateur et sur l'application mobile.
+ * L'application a été liée avec succès et simplicité. Comme le design de l'application n'est pas totalement responsive l'interface usager n'est pas utilisable facilement. Le côté réactif de Meteor est préservé, en ajoutant des éléments à MongoDB, ils apparaissent simultanément à l'ordinateur et sur l'application mobile. Elle fonctionne aussi bien sous émulateur que téléphone. Un aspect intéressant est le fait que lorsqu'une nouvelle version de l'application Meteor est déployée, l'application mobile se met à jour. 
 
-* Recommandations :
- * Utiliser cette méthode avec un design resposive (HTML5, CSS3 et Bootstrap).
+* Considérations :
+ * Utiliser cette méthode avec un design resposive (HTML5, CSS3 et Bootstrap) ou encore une solution proposée par la Phase 2 du projet.
  * Explorer l'utilisation de données hors-ligne et du package appcach pour utiliser l'application sans connexion internet.
- * Cette approche peux être interessante puisque le contenu provient à tout coup du serveur. Il faut vérifier si l'on doit faire un build de l'application mobile pour chque version, mais ça ne semble pas être le cas.
+ * Cette approche peux être interessante puisque le contenu provient à tout coup du serveur.
 
 ###Packmeteor
 * Documentation : 
@@ -69,17 +66,35 @@
  * L'application fonctionne avec l'applicaion de test fournit par cordova (téléchargeable sous AppStore ou PlayStore).
  * Il a été possible de créer un exécutable de l'application lié à une application Meteor déployée. Le tout est réactif.
 
-* Recommandations :
+* Considérations :
  * Cette méthode fonctionne mais certains problèmes sont actuellement présent au niveau du package.
  * Il faut faire attention à refaire un package de l'application mobile lorsqu'une nouvelle version de l'application web est déployée.
  * Il faut explorer les possibilités d'envoyer du contenu différent selon le type de média (mobile, desktop, etc.) et non modifier le css. La réactivité n'est pas suffisante dans un context ou l'application mobile désiré étends l'interractivité de l'utilisateur.
+ * Cette méthode implique d'utiliser à la fois Meteor, Cordova, Packmeteor sous Npm et Packmeteor en tant que package Meteor, ce qui complexifie le bundling de l'application mobile.
 
-###Cordova-phonegap
-* Documentation : 
+###Conclusion 
+
+   L'appoche choisie pour la Phase 1 est d'utiliser le boiler-plate fournit qui utilise MeteorRider. Cette façon de faire est très simple est propose un système de mise à jour centralisé via Meteor. Elle permet d'utiliser Meteor et Cordova de façon indépendante, sans applications/package agissant comme interface.
+
+##Phase 2 - Gestion du média dans l'application Meteor (Routage, Templates et Collections)
+
+* Sources : 
+ *
+
+###Gestion des templates et du routage
 * Hypothèses :
-* Tests :
-* Résultats
-* Recommandations :
+   En utilisant un package qui permet de détecter le type de media, le contenu envoyé à l'utilisateur peut-être adapté directement dans le cod JavaScript. Cette méthode permettrait de créer différent templates selon le type de média et de gérer le router à utiliser.
+* Tests : 
+* Résultats :
+* Considérations :
+
+###Design responsive (CSS)
+* Hypothèses :
+   En utilisant CSS et Bootstrap le contenu peut être géré avec des classes. Il peut être facile de modifier le contenu de cette façon, mais elle ne permet pas la gestion des Collections (publish/subscribe).
+* Tests : 
+* Résultats :
+* Considérations :
+
 ##Glossaire
 
 * **Native** :
