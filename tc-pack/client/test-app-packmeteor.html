@@ -1,0 +1,30 @@
+<head>
+  <title>test-app-packmeteor</title>
+</head>
+
+<body>
+  <div class="content">
+    {{> deviceRender 'app'}}
+  </div>
+</body>
+
+
+<template name="app">
+  <div class="row">{{media}}</div>
+  <button type="button" class="btn btn-default">+</button>
+  {{#each clicks}}
+    <div class="row">{{content}} - {{createdAt}}</div>
+  {{/each}}
+</template>
+
+<template name="app_phone">
+  <div class="row">{{media}}</div>
+  <button type="button" class="btn btn-default">+</button>
+  {{#each clicks}}
+    <div class="row">{{content}}</div>
+  {{/each}}
+</template>
+
+<template name="item">
+  
+</template>

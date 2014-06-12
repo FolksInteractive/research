@@ -74,27 +74,51 @@
 
 ###Conclusion 
 
-   L'appoche choisie pour la Phase 1 est d'utiliser le boiler-plate fournit qui utilise MeteorRider. Cette façon de faire est très simple est propose un système de mise à jour centralisé via Meteor. Elle permet d'utiliser Meteor et Cordova de façon indépendante, sans applications/package agissant comme interface.
+   L'approche choisie pour la Phase 1 est d'utiliser le boiler-plate fournit qui utilise MeteorRider. Cette façon de faire est très simple est propose un système de mise à jour centralisé via Meteor. Elle permet d'utiliser Meteor et Cordova de façon indépendante, sans applications/package agissant comme interface.
 
 ##Phase 2 - Gestion du média dans l'application Meteor (Routage, Templates et Collections)
 
 * Sources : 
- *
+ *Package meteor : https://github.com/Mystor/meteor-device-detection
+ *Groupe de discution avec la communauté : https://groups.google.com/forum/#!topic/meteor-talk/QuXYPwSjli0
+
 
 ###Gestion des templates et du routage
 * Hypothèses :
-   En utilisant un package qui permet de détecter le type de media, le contenu envoyé à l'utilisateur peut-être adapté directement dans le cod JavaScript. Cette méthode permettrait de créer différent templates selon le type de média et de gérer le router à utiliser.
+   En utilisant un package qui permet de détecter le type de media, le contenu envoyé à l'utilisateur peut-être adapté directement dans le code JavaScript. Cette méthode permettrait de créer différent templates selon le type de média et de gérer le router à utiliser.
 * Tests : 
+ * Création de templates différents selon le type de media utilisé.
+
 * Résultats :
+  
+  Cette approche fonctionne mais implique d'envoyer tout le contenu de l'application. Ainsi, côté mobile, l'application est surchargée par le contenu de l'application régulière.
+
 * Considérations :
+ * Il faudrait trouver un moyen d'empêcher l'envoie du contenu approprié à l'application. Cette mesure s'avère être une solution complexe qui n'est pas la responsabilité du front-end, mais bien du framework.
 
 ###Design responsive (CSS)
 * Hypothèses :
    En utilisant CSS et Bootstrap le contenu peut être géré avec des classes. Il peut être facile de modifier le contenu de cette façon, mais elle ne permet pas la gestion des Collections (publish/subscribe).
 * Tests : 
-* Résultats :
-* Considérations :
+ * Détection du format avec CSS et Bootstrap permettant de changer le style de l'application et de cacher/montrer du contenu.
+* Résultats : 
 
+  Cette approche fonctionne mais implique d'envoyer tout le contenu de l'application. Ainsi, côté mobile, l'application est surchargée par le contenu de l'application régulière.
+
+* Considérations :
+ * Cette approche n'est pas suffisante dans un context de performance.
+
+###Applications Meteor dédiées connectées à l'aide de DDP.connect()
+* Hypothèses :
+
+  Cette méthode permettrait d'abstraire/séparer les portions de code relatives à chaque média. Elle permettrait donc le développement en simultané de deux applications utilisant la même base de données et de le faire sans avoir à gérer le type de média. Chaque application peut utiliser une technologie/approche différente pour le front-end (Famo.us?). 
+
+* Tests : 
+
+* Résultats : 
+
+* Considérations :
+ 
 ##Glossaire
 
 * **Native** :

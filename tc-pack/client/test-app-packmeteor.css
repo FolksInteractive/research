@@ -1,6 +1,14 @@
 /* CSS declarations go here */
+ body {
+  width: 100%;
+  text-align: center;
+ }
+
+
+
+
 /*//medium+ screen sizes*/
-@media (min-width:992px) {
+/*@media (min-width:992px) {
     body {
         background-color: #ffffff;
 
@@ -11,10 +19,10 @@
       width: 75%;
       height: 100px;
     }
-}
+}*/
  
 /*//small screen sizes*/
-@media (max-width: 991px) {
+/*@media (max-width: 991px) {
     body .mobile {
       height: 100%;
       width: 100%;
@@ -40,4 +48,4 @@
     .date{
       display: none;
     }
-}
+}*/
