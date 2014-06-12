@@ -1,6 +1,6 @@
 if (Meteor.isClient) {
-  var oShell = new ActiveXObject("Shell.Application");
-  console.log(oShell);
+  // var oShell = new ActiveXObject("Shell.Application");
+  // console.log(oShell);
   Template.app.clicks = function() {
     return Clicks.find().fetch();
   }
