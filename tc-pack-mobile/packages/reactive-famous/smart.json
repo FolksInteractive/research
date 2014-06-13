@@ -1,0 +1,11 @@
+{
+  "name": "reactive-famous",
+  "description": "MVC style package that makes Famo.us reactive.",
+  "homepage": "",
+  "author": "Renaud Vincent (http://timecrumbs.com)",
+  "version": "0.1.0",
+  "git": "",
+  "packages": {
+    "famono": []
+  }
+}

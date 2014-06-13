@@ -114,10 +114,29 @@
   Cette méthode permettrait d'abstraire/séparer les portions de code relatives à chaque média. Elle permettrait donc le développement en simultané de deux applications utilisant la même base de données et de le faire sans avoir à gérer le type de média. Chaque application peut utiliser une technologie/approche différente pour le front-end (Famo.us?). 
 
 * Tests : 
+ * Création d'une application mobile avec Meteor déployée sous tc-packmobile.meteor.com 
 
 * Résultats : 
 
+  Les deux applications ont pu être connectées via la base de données. Il a été possible d'insérer des éléments à une collections via les deux applications. Le tout était réactif.
+
 * Considérations :
+ * Bien adapter l'approche une fois que les packages insecure et autopublish seront enlevés.
+ * S'assurer de respecter les règles d'affaires établie sous l'application web.
+
+###Conclusion
+
+  La dernière approche sera celle utilisée dans un contexte mobile. Elle respecte la segmentation de code et le respect des responsabilités, il n'y aura pas de gestion de média à faire dans le front-end. Aussi, elle permet de développer en simultané les deux applications sans interférence.
+
+##Phase 3 - Réactivité des application mobiles Meteor utilisant Famo.us
+
+* Description : 
+
+* Hypothèses / Situation initiale :
+
+* Tests : 
+
+* Résultats : 
  
 ##Glossaire
 
