@@ -132,11 +132,23 @@
 
 * Description : 
 
+  Si le contenu de Famo.us est dynamique, qu'il dépend du contenu des collections de Meteor, il vaut mieux le rendre réactif. 
+  Lors du rendering, les collections ne sont pas accessible, il faut trouver un moyen de délayer ou de regénérer le contenu de Famo.us quand la base de données est accessible.
+
 * Hypothèses / Situation initiale :
+ * En utilisant Deps et autorun, il devrait être possible de rendre le tout réactif.
+ * Un MVC pourrait être développé afin de gérer le tout. 
+ * Certaines classes de Famo.us pourraient être adaptées.
 
 * Tests : 
+ 1. Extension de la classe RenderingNode de Famo.us
+ 2. Wrapper utilisant autorun
+ 3. Utilisation du package Famous-components
 
 * Résultats : 
+ 1. Le contenu ne peut être reactif puisqu'il est accédé de par l'extérieur de la classe à étendre. Les objets de la classes ne peuvent pas être regénérés autre que dans le code client.
+ 2. Le Wrapper fonctionne en package, il faut simplement faire attention à ne pas générer de contenu supplémentaire (vider le tableau de surfaces à chaque accès aux collections).
+ 3. Le package ne fonctionne pas, certaines librairies ne sont pas accessibles. 
  
 ##Glossaire
 
