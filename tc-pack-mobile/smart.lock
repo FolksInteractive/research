@@ -3,7 +3,9 @@
   "dependencies": {
     "basePackages": {
       "iron-router": {},
-      "famono": {}
+      "famono": {},
+      "npm": {},
+      "cordova": {}
     },
     "packages": {
       "iron-router": {
@@ -15,6 +17,16 @@
         "git": "https://github.com/raix/Meteor-famono.git",
         "tag": "v0.3.3",
         "commit": "e953d5f1f7a9906d3df86472b9582f14cc3e4699"
+      },
+      "npm": {
+        "git": "https://github.com/arunoda/meteor-npm.git",
+        "tag": "v0.2.6",
+        "commit": "177ab6118de5bf8cffb19481343d5762ff7a2aaf"
+      },
+      "cordova": {
+        "git": "https://github.com/raix/Meteor-cordova.git",
+        "tag": "v0.0.8",
+        "commit": "4eff8b9a853673f5f4b450a0102e78f554836da4"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

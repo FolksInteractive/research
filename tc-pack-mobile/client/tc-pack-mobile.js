@@ -1,19 +1,18 @@
 famousPolyfills;
 famous.core.famous;
+document.addEventListener('deviceready', function () {
+          navigator.splashscreen.hide(); //Hides the splash screen for your app.
+        StatusBar.overlaysWebView(false);    
+}, false);
 
 Template.hello.rendered = function() {
   Engine = famous.core.Engine;
   mainContext = Engine.createContext();
   Transform = famous.core.Transform;
-  var TouchSync = require("famous/inputs/TouchSync");
 
   scrollView = new famous.views.Scrollview({},0,0,100,100);
   var position = [0, 0];
 
-  touchSync = new TouchSync(function() {
-    return position;
-  });
-  Engine.pipe(touchSync);
 
   var clicks = [];
   var surfaces;
@@ -37,11 +36,19 @@ Template.hello.rendered = function() {
       surf.pipe(scrollView);
       surfaces.push(surf);
     }  
-    console.log(surfaces.length,clicks.length);
+    console.log(surfaces.length,clicks.length, amount());
     scrollView.sequenceFrom(surfaces);
+
+    // if(amount() !== Clicks.find().fetch().length)
+    //   window.navigator.vibrate(100);
   });
 
-  var drag = new famous.modifiers.Draggable();
+  drag = new famous.modifiers.Draggable({
+    xRange: [0,75],
+    yRange: [0,0]
+  });
+  menuView = new famous.core.View();
+
   side = new famous.core.Surface({
     size: [75, undefined],
     properties: {
@@ -49,25 +56,33 @@ Template.hello.rendered = function() {
       zIndex: '1'
     }
   });
+  
+  icon = new famous.core.Surface({
+    size: [105,70],
+    properties: {
+      borderRadius: '35px',
+      background: 'rgba(0,0,0,0.4)',
+      zIndex: '2'
+    }
+  });
+  menuView.add(side);
+  menuView.add(icon);
   sideMod = new famous.core.Modifier({
     transform: Transform.translate(-75,0,0)
   });
 
-
-  touchSync.on("start", function() {
-    console.log('start drag');
-  });
-
-  touchSync.on("update", function(data) {
-    console.log('touchin', data);
-  });
-
-  touchSync.on("end", function() {
-    console.log('end touch');
-  });
-
-  drag.subscribe(side);
+  drag.subscribe(icon);
   mainContext.add(scrollView);
-  mainContext.add(drag).add(sideMod).add(side);
-}
+  mainContext.add(drag).add(sideMod).add(menuView);
 
+  window.plugin.notification.local.add({message: 'Your app is loaded'});
+
+  Clicks.find().observeChanges({
+    added: function(){
+      console.log('Added click');
+      window.plugin.notification.local.add({message: 'New click, go see that'});
+    }
+  });
+
+
+}

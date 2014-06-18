@@ -1,5 +1,11 @@
 #Projet mobile – Recherche et développement
 
+##Conclusion du projet - Résultats
+
+  Il a été possible de créer une application mobile Meteor connecté à une application web. Les deux partageaient une base de donnée via DDP.
+  L'interface mobile a été fait avec Famo.us et a été rendue réactive via un wrapper fait en package. Le visuel est chargé lors du rendering tu template principal. Le rendu mobile se fait via MeteorRider dans un projet Cordova. 
+  Les plugins ajouté à Cordova peuvent être utilisées dans Meteor si l'appareil et prêt (document.addEventListener('deviceready', function () {}).
+
 ##Problématique
 
 * Utiliser Meteor dans un context mobile avec Cordova/Phonegap.
